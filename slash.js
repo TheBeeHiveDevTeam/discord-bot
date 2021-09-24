@@ -6,11 +6,12 @@ const fs = require('fs');
 const { clientId, guildId } = require("./config.json")
 
 const commands = [];
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync('./slash').filter(file => file.endsWith('.js'));
 
 
 for (const file of commandFiles) {
-	const command = require(`./commands/${file}`);
+	const command = require(`./slash/${file}`);
+	console.log(command)
 
 	commands.push(command.data.toJSON());
 }

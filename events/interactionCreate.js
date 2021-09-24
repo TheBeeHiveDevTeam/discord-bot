@@ -21,7 +21,7 @@ module.exports = {
             //Slash commands
 
             const command = client.commands.get(interaction.commandName);
-            console.log(command)
+            console.log(interaction.commandName)
             if (!command) return;
 
             try {
